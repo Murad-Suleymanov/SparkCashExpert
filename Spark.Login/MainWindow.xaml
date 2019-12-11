@@ -1,0 +1,39 @@
+﻿<Window x:Class="Spark.Login.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spark.Login"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Login" Height="500" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Height="280" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" >
+                    <GradientStop Color="#ff2281D1"/>
+                    <GradientStop Color="#ff34268A" Offset="1"/>
+                    <GradientStop Color="#ff33288b" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="C:\Users\Murad\source\repos\Spark\Spark.Login\Image\lock.png" VerticalAlignment="Top" Width="100" Height="100" Margin="125,20,125,0"/>
+        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,100" Grid.RowSpan="2" RadiusY="21.985" RadiusX="21.985">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFC7C5C5" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="35,0,35,100" Grid.RowSpan="2">
+            <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="18"/>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <TextBox materialdesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                <PasswordBox materialdesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox }" Margin="0,10"/>
+            </StackPanel>
+        </Grid>
+        <Button VerticalAlignment="Bottom" Margin="95,0,105,41" Width="150" Height="35" Content="LOGIN" Grid.Row="1"></Button>
+    </Grid>
+</Window>
