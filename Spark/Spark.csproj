@@ -120,15 +120,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ay2mod3s9tn6hj4bkiwj.jpg" />
+    <Resource Include="Images\logo-dark.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\document-add.png" />
     <Resource Include="Images\document-cancel.png" />
-    <Resource Include="Images\document-numbers.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\download.png" />
+    <Resource Include="Images\document-file-numbers.png" />
+    <Resource Include="Images\inbox-filled.png" />
+    <Resource Include="Images\one-finger-swipe-left.png" />
+    <Resource Include="Images\printer-text.png" />
+    <Resource Include="Images\search-plus.png" />
+    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\trash-can.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets')" />

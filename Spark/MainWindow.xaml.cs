@@ -27,25 +27,7 @@ namespace Spark
         public MainWindow()
         {
             InitializeComponent();
-            List<Person> people = new List<Person>();
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
-            people.Add(new Person { Id = 1, Name = "Murad", SurnameSurname = "Suleymanov" });
+            FakeMethod();
         }
 
         private  void BtnNewSale_Click(object sender, RoutedEventArgs e)

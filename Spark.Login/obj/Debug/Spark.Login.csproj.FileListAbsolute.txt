@@ -1,9 +1,7 @@
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.csprojAssemblyReference.cache
-C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\MainWindow.g.cs
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\App.g.cs
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login_MarkupCompile.cache
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login_MarkupCompile.lref
-C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\MainWindow.baml
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.exe
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.pdb
 C:\Users\Murad\source\repos\Spark\Spark.Login\bin\Debug\Spark.Login.exe.config
@@ -20,3 +18,8 @@ C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.Properties.R
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.csproj.GenerateResource.cache
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.csproj.CoreCompileInputs.cache
 C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\Spark.Login.csproj.CopyComplete
+C:\Users\Murad\source\repos\Spark\Spark.Login\bin\Debug\Spark.exe
+C:\Users\Murad\source\repos\Spark\Spark.Login\bin\Debug\Spark.pdb
+C:\Users\Murad\source\repos\Spark\Spark.Login\bin\Debug\Spark.exe.config
+C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\View\Windows\LoginPage.baml
+C:\Users\Murad\source\repos\Spark\Spark.Login\obj\Debug\View\Windows\LoginPage.g.cs
