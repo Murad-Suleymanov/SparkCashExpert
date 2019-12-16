@@ -63,19 +63,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GiveBackSellingWindow.xaml.cs">
-      <DependentUpon>GiveBackSellingWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\FindProduct\FindProductBaseCommand.cs" />
+    <Compile Include="Commands\MainWindow\FindProductCommand.cs" />
+    <Compile Include="Commands\MainWindow\MainWindowCommandBase.cs" />
+    <Compile Include="Commands\MainWindow\SettingCommand.cs" />
+    <Compile Include="Commands\SellingCommand\NewSellingCommandBase.cs" />
+    <Compile Include="Constans.cs" />
     <Compile Include="Helper\CallUC.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="Satis.xaml.cs">
-      <DependentUpon>Satis.xaml</DependentUpon>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Selling\SellingViewModel.cs" />
+    <Compile Include="ViewModel\Ticker.cs" />
+    <Compile Include="ViewModel\UCViewModel.cs" />
+    <Compile Include="ViewModel\Windows\FindProductViewModel.cs" />
+    <Compile Include="ViewModel\Windows\MainWindowViewModel.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Compile Include="UserControl\SellingControl.xaml.cs">
+      <DependentUpon>SellingControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="GiveBackSellingWindow.xaml">
+    <Compile Include="View\DialogBox\ForDeleteInvoice.xaml.cs">
+      <DependentUpon>ForDeleteInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogBox\ForDeleteRow.xaml.cs">
+      <DependentUpon>ForDeleteRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RequestAdmin.xaml.cs">
+      <DependentUpon>RequestAdmin.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\CalculateRemainder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\ChangeAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogBox\ForDeleteInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogBox\ForDeleteRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FindProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -83,11 +119,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\CalculateRemainder.xaml.cs">
+      <DependentUpon>CalculateRemainder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChangeAmount.xaml.cs">
+      <DependentUpon>ChangeAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FindProduct.xaml.cs">
+      <DependentUpon>FindProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Satis.xaml">
+    <Page Include="UserControl\SellingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RequestAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +182,7 @@
     <Resource Include="Images\settings.png" />
     <Resource Include="Images\trash-can.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

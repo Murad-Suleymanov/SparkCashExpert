@@ -12,7 +12,7 @@ namespace Spark.Login.ViewModel
     public class LoginViewModel : WindowViewModel
     {
         public SignInCommand SignIn => new SignInCommand(this);
-        public User User { get; set; } = new User();
+        public  User User { get; set; } = new User();
 
 
         public Window Window { get; set; }

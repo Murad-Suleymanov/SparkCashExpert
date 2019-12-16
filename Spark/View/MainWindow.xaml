@@ -3,31 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow"  Height="768" 
     Width="1360"  WindowStyle="None" WindowState="Maximized" >
-    <Grid Margin="0,0,0,0">
-        
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" x:Name="grdForUC" Margin="40,10,47,10" >
+    <Window.Resources>
+        <Storyboard x:Key="clockStory" Duration="0:0:2" RepeatBehavior="Forever">
+            <StringAnimationUsingKeyFrames
+            Storyboard.TargetName="clock"
+            Storyboard.TargetProperty="(Label.Tag)">
+                <DiscreteStringKeyFrame KeyTime="0:0:0" Value="{Binding Source={x:Static sys:DateTime.Now}}" />
+                <DiscreteStringKeyFrame KeyTime="0:0:1" Value="...."  />
+            </StringAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource clockStory}"/>
+        </EventTrigger>
+    </Window.Triggers>
 
+    <Grid Margin="0,0,0,0">
+        <Label x:Name="clock" Content="{Binding ElementName=clock, Path=Tag}"/>
+        
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" x:Name="grdForUC" Margin="40,10,47,10" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <DataGrid Grid.Row="0"></DataGrid>
+            <Button Width="85" Grid.Row="1" Background="#9fd356" BorderBrush="#9fd356" Content="Təsdiqlə" Foreground="White" HorizontalAlignment="Right" Margin="0,0,0,0" Click="Button_Click"></Button>
         </Grid>
         <Label Grid.ColumnSpan="2" Grid.Row="2" Background="#342e37">
             <DockPanel>
                 <StackPanel>
-                    <Label Content="Kassir: " FontFamily="Roboto Condensed" FontSize="14" Foreground="White" FontWeight="Bold"/>
-                    <Label Content="Magaza: "  FontSize="14"  Foreground="White" FontWeight="Bold"/>
+                    <DockPanel>
+                        <Label Content="Kassir: " FontFamily="Roboto Condensed" FontSize="14" Foreground="White" FontWeight="Bold"/>
+                        <Label Content="{Binding CashierName}" FontFamily="Roboto Condensed" FontSize="14" Foreground="White" FontWeight="Bold"></Label>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Magaza: "  FontSize="14"  Foreground="White" FontWeight="Bold"/>
+                        <Label Content="{Binding Store}" FontSize="14"  Foreground="White" FontWeight="Bold"></Label>
+                    </DockPanel>
                 </StackPanel>
                 <StackPanel>
                     <Label></Label>
-                    <Label Margin="150,17,0,0" Content="Kassa: " FontSize="14" Foreground="White" FontWeight="Bold"/>
+                    <DockPanel>
+                        <Label Margin="150,17,0,0" Content="Kassa: " FontSize="14" Foreground="White" FontWeight="Bold"/>
+                        <Label Content="{Binding CashRegister}" Margin="10,17,0,0" FontSize="14" Foreground="White" FontWeight="Bold"></Label>
+                    </DockPanel>
                 </StackPanel>
             </DockPanel>
         </Label>
         <Label Grid.ColumnSpan="2" Grid.Row="0" Margin="43,97,50,0" Height="5" Background="#9fd356" />
         <StackPanel HorizontalAlignment="Right" MinWidth="350" Background="#342e37"  Width="350" Grid.Column="2"  Grid.RowSpan="3">
             <UniformGrid Columns="2" Rows="4">
-                <Button x:Name="btnNewSale" Background="#9fd356" Foreground="White" Width="140" Height="140" Margin="22,20,10,5" materialDesign:ButtonAssist.CornerRadius="10" Click="BtnNewSale_Click">
+                <Button x:Name="btnNewSale" Background="#9fd356" Foreground="White" Width="140" Height="140" Margin="22,20,10,5" materialDesign:ButtonAssist.CornerRadius="10">
                     <StackPanel>
                         <Image Source="C:\Users\Murad\source\repos\Spark\Spark\Images\document-add.png" Width="80"></Image>
                         <Label Content="Yeni Satış" Foreground="White" FontSize="16"></Label>
@@ -46,7 +79,7 @@
                         <Label Content="Miqdarı dəyiş" Foreground="White" Margin="-2,0,0,0" FontSize="16" FontWeight="Bold"></Label>
                     </StackPanel>
                 </Button>
-                <Button Background="#9fd356" Foreground="White" Width="140" Height="140" Margin="0,10,5,10" materialDesign:ButtonAssist.CornerRadius="10" >
+                <Button Command="{Binding findProduct}" Background="#9fd356" Foreground="White" Width="140" Height="140" Margin="0,16,5,10" materialDesign:ButtonAssist.CornerRadius="10" >
                     <StackPanel>
                         <Image Source="C:\Users\Murad\source\repos\Spark\Spark\Images\search-plus.png" Width="80"></Image>
                         <Label Content="Məhsulu seç" Foreground="White" Margin="0,0,0,0" FontSize="16" FontWeight="Bold"></Label>
@@ -81,11 +114,17 @@
                 </Button>
             </UniformGrid>
                 
-            <Button Height="50" Background="#9fd356" Foreground="White" Margin="22,10,18,10" materialDesign:ButtonAssist.CornerRadius="10" >
-                <DockPanel>
-                    <Image Source="C:\Users\Murad\source\repos\Spark\Spark\Images\settings.png" Width="40" Margin="0,0,0,0"></Image>
-                    <Label Content="Tənzimləmələr" Foreground="White" Margin="0,0,0,0" FontSize="27" FontWeight="Bold"  VerticalAlignment="Center"></Label>
-                </DockPanel>
+            <Button Command="{Binding SettingCommand}" Height="50" Background="#9fd356" Foreground="White" Margin="22,10,18,10" materialDesign:ButtonAssist.CornerRadius="10" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Button Command="{Binding settingCommand}" Height="50" Background="#9fd356" Foreground="White">
+                            <DockPanel>
+                                <Image Source="C:\Users\Murad\source\repos\Spark\Spark\Images\settings.png" Width="40" Margin="0,0,0,0"/>
+                                <Label Content="Tənzimləmələr" Foreground="White" Margin="0,0,0,0" FontSize="27" FontWeight="Bold"  VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </Button>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
         </StackPanel>
         <DockPanel HorizontalAlignment="Right" Margin="0,0,50,0" >
@@ -107,8 +146,8 @@
             <Label Content="2,274" FontWeight="ExtraBlack" FontSize="30" Margin="0,0,0,0" Foreground="Black" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="48" Width="90"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <Label Content="12:11:04" FontSize="23" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Height="39" Width="100"/>
-            <Label HorizontalAlignment="Left" Margin="13,0,0,0" Foreground="White" Content="18 Noyabr 2019" FontSize="10" Grid.Row="2" VerticalAlignment="Top" Height="21" Width="78"></Label>
+            <Label Content="{Binding Source={x:Static sys:DateTime.Now}, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="hh mm ss" x:Name="lblDateTime" FontSize="23" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Height="39" Width="100"/>
+            <Label HorizontalAlignment="Left" Margin="13,0,0,0" Foreground="White" ContentStringFormat="dd MMM yyyy" Content="{Binding Now}" FontSize="10" Grid.Row="2" VerticalAlignment="Top" Height="21" Width="78"></Label>
         </StackPanel>
         <Grid.RowDefinitions>
             <RowDefinition Height="110"/>

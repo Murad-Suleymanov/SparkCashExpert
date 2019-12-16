@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Spark
+namespace Spark.View
 {
     /// <summary>
-    /// Interaction logic for GiveBackSellingWindow.xaml
+    /// Interaction logic for CalculateRemainder.xaml
     /// </summary>
-    public partial class GiveBackSellingWindow : Window
+    public partial class CalculateRemainder : Window
     {
-        public GiveBackSellingWindow()
+        public CalculateRemainder()
         {
             InitializeComponent();
         }

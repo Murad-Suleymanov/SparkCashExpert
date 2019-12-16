@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Murad\source\repos\Spark\Spark\App.xaml
-3-1735678090
+8268433022
 
-9970681125
+28361726676
 151489727814
-GiveBackSellingWindow.xaml;MainWindow.xaml;Satis.xaml;
+View\CalculateRemainder.xaml;View\ChangeAmount.xaml;View\DialogBox\ForDeleteInvoice.xaml;View\DialogBox\ForDeleteRow.xaml;View\FindProduct.xaml;View\MainWindow.xaml;UserControl\SellingControl.xaml;View\RequestAdmin.xaml;
 
 False
 
