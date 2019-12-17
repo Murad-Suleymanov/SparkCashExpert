@@ -15,8 +15,10 @@ namespace Spark.ViewModel.Windows
 {
     public class MainWindowViewModel:WindowViewModel
     {
-        FindProductCommand findProduct => new FindProductCommand(this);
-        SettingCommand settingCommand => new SettingCommand(this);
+        public FindProductCommand findProduct => new FindProductCommand(this);
+        public SettingCommand settingCommand => new SettingCommand(this);
+        public ChangeAmountCommand amountCommand => new ChangeAmountCommand(this);
+        public CalculateRemainderCommand remainderCommand => new CalculateRemainderCommand(this);
         public string Username { get; set; }
         public Window Window { get; set; }
         public MainWindowViewModel()

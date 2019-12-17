@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spark.ViewModel.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace Spark.View
     /// </summary>
     public partial class CalculateRemainder : Window
     {
+        CalculateRemainderViewModel calculateRemainderVM;
         public CalculateRemainder()
         {
             InitializeComponent();
+            calculateRemainderVM = new CalculateRemainderViewModel();
+            DataContext = calculateRemainderVM;
+            calculateRemainderVM.CurrentWindow = this;
         }
     }
 }

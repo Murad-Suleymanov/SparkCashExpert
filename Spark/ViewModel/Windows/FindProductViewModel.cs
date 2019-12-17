@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spark.Commands.FindProduct;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Spark.ViewModel.Windows
 {
     public class FindProductViewModel:WindowViewModel
     {
+        public CancelCommand cancelCommand => new CancelCommand(this);
         private string barcode;
 
         public string Barcode

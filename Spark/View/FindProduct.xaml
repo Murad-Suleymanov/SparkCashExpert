@@ -78,7 +78,7 @@
         <Button Grid.Column="4" Grid.Row="4" Height="Auto" Content="C" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="5" Grid.Row="4" Height="Auto" Content="0" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="6" Grid.Row="4" Height="Auto" Content="Sil" Style="{StaticResource btnRight}"/>
-        <Button Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="5"  Content="X" Style="{StaticResource btnCancel}" />
+        <Button Command="{Binding cancelCommand}" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="5"  Content="X" Style="{StaticResource btnCancel}" />
 
     </Grid>
 </Window>

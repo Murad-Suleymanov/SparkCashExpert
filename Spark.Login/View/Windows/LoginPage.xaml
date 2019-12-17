@@ -20,7 +20,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source="C:\Users\Murad\source\repos\Spark\Spark.Login\Image\lock.png" VerticalAlignment="Top" Width="100" Height="100" Margin="125,20,125,0"/>
+        <Image Source="/Spark.Login;component/Image/lock.png" VerticalAlignment="Top" Width="100" Height="100" Margin="125,20,125,0"/>
         <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,100" Grid.RowSpan="2" RadiusY="21.985" RadiusX="21.985">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFC7C5C5" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>

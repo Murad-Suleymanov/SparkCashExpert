@@ -97,7 +97,7 @@
             <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource btnRight}" Content="9"/>
             <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="00"/>
             <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
-            <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="C"/>
+            <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="C" Command="{Binding cancelCommand}"/>
             <Button Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource btnChoose}"/>
         </Grid>
     </Grid>
