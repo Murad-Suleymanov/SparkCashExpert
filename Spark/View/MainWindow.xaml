@@ -146,7 +146,8 @@
             <Label Content="2,274" FontWeight="ExtraBlack" FontSize="30" Margin="0,0,0,0" Foreground="Black" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="48" Width="90"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <Label Content="{Binding Source={x:Static sys:DateTime.Now}, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="hh mm ss" x:Name="lblDateTime" FontSize="23" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Height="39" Width="100"/>
+            <!--<Label Content="{Binding Source={x:Static sys:DateTime.Now}, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="hh mm ss" x:Name="lblDateTime" FontSize="23" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Height="39" Width="100"/>-->
+            <Label x:Name="lblDateTime" FontSize="23" FontWeight="Bold" HorizontalAlignment="Left" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Height="39" Width="100"/>
             <Label HorizontalAlignment="Left" Margin="13,0,0,0" Foreground="White" ContentStringFormat="dd MMM yyyy" Content="{Binding Now}" FontSize="10" Grid.Row="2" VerticalAlignment="Top" Height="21" Width="78"></Label>
         </StackPanel>
         <Grid.RowDefinitions>
