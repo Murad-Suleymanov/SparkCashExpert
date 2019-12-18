@@ -28,7 +28,7 @@ namespace Spark.ViewModel.Windows
 
         private void DateTimeChanged()
         {
-            timer = new System.Timers.Timer();
+            System.Timers.Timer timer = new System.Timers.Timer();
             timer.Interval = 1000; // 1 second updates
             timer.Elapsed += timer_Elapsed;
             timer.Start();

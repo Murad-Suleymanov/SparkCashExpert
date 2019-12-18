@@ -43,7 +43,11 @@ namespace Spark
 
         public void timerElapse(object sender, ElapsedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => { lblDateTime.Content = DateTime.Now.ToString("HH:mm:ss"); });            
+            this.Dispatcher.Invoke(() =>
+            {
+                lblDateTime.Content = DateTime.Now.ToString("HH:mm:ss");
+                lblDateTimeDay.Content = (DateTime.Now.ToString("dd:MM:yyyy"));
+            });
         }
 
         void ShowView() => ShowDialog();
