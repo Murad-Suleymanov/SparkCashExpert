@@ -13,7 +13,7 @@ using System.Windows.Threading;
 
 namespace Spark.ViewModel.Windows
 {
-    public class MainWindowViewModel:WindowViewModel
+    public class MainWindowViewModel : WindowViewModel
     {
         public FindProductCommand findProduct => new FindProductCommand(this);
         public SettingCommand settingCommand => new SettingCommand(this);
@@ -53,24 +53,16 @@ namespace Spark.ViewModel.Windows
         public string CashierName
         {
             get { return cashierName; }
-            set {
+            set
+            {
                 cashierName = value;
                 OnPropertyChanged(nameof(CashierName));
             }
         }
-        public DateTime Now
-        {
-            get { return DateTime.Now; }
-            set { Now = value;
-                System.Timers.Timer timer = new System.Timers.Timer();
-                timer.Interval = 1000; // 1 second updates
-                timer.Elapsed += timer_Elapsed;
-                timer.Start();
-            }
-        }
+        public DateTime Now { get; set; }
 
 
-        private string cashRegister="Kassa 1";
+        private string cashRegister = "Kassa 1";
 
         public string CashRegister
         {
@@ -82,7 +74,7 @@ namespace Spark.ViewModel.Windows
             }
         }
 
-        private string store="Magaza Ehmedli";
+        private string store = "Magaza Ehmedli";
 
         public string Store
         {
@@ -95,14 +87,18 @@ namespace Spark.ViewModel.Windows
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
 
         public void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Now)));
+            Now = DateTime.Now;
+            //PropertyChanged += new PropertyChangedEventHandler(NowChanged(this, new PropertyChangedEventArgs(nameof(Now)));
         }
 
-
+        public void NowChanged(object sender, PropertyChangedEventArgs e)
+        {
+            
+        }
     }
 }

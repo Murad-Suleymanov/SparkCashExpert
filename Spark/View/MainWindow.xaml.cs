@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -27,6 +28,7 @@ namespace Spark
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.Timers.Timer timer = new System.Timers.Timer();
         MainWindowViewModel mainWindowVM;
         public MainWindow(MainWindowViewModel mainWindowVM)
         {
@@ -34,6 +36,18 @@ namespace Spark
             this.mainWindowVM = mainWindowVM;
             DataContext = mainWindowVM;
             mainWindowVM.Window = this;
+            timer.Interval = 1000;
+            timer.Elapsed += timerElapse;
+            timer.Start();
+        }
+
+        public void timerElapse(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                lblDateTime.Content = DateTime.Now.ToString("HH:mm:ss");
+                lblDateTimeDay.Content = (DateTime.Now.ToString("dd:MM:yyyy"));
+            });
         }
 
         void ShowView() => ShowDialog();
