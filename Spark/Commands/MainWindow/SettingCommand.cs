@@ -15,7 +15,7 @@ namespace Spark.Commands.MainWindow
 
         public override void Execute(object parameter)
         {
-            mainWindowVM.CurrentWindow.Close();
+            mainWindowVM.Window.Close();
         }
     }
 }

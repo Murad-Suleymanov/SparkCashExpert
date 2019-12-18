@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spark.ViewModel.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace Spark.View
     /// </summary>
     public partial class ChangeAmount : Window
     {
+        ChangeAmountViewModel changeAmountVM;
         public ChangeAmount()
         {
             InitializeComponent();
+            changeAmountVM = new ChangeAmountViewModel();
+            DataContext = this.changeAmountVM;
+            changeAmountVM.CurrentWindow = this;
         }
     }
 }

@@ -64,7 +64,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommand.cs" />
-    <Compile Include="Commands\FindProduct\FindProductBaseCommand.cs" />
+    <Compile Include="Commands\CalculateRemainder\CalculateRemainderCommandBase.cs" />
+    <Compile Include="Commands\CalculateRemainder\CancelCommand.cs" />
+    <Compile Include="Commands\ChangeAmount\CancelCommand.cs" />
+    <Compile Include="Commands\ChangeAmount\ChangeAmountCommandBase.cs" />
+    <Compile Include="Commands\FindProduct\CancelCommand.cs" />
+    <Compile Include="Commands\FindProduct\FindProductCommandBase.cs" />
+    <Compile Include="Commands\MainWindow\CalculateRemainderCommand.cs" />
+    <Compile Include="Commands\MainWindow\ChangeAmountCommand.cs" />
     <Compile Include="Commands\MainWindow\FindProductCommand.cs" />
     <Compile Include="Commands\MainWindow\MainWindowCommandBase.cs" />
     <Compile Include="Commands\MainWindow\SettingCommand.cs" />
@@ -75,6 +82,8 @@
     <Compile Include="ViewModel\Selling\SellingViewModel.cs" />
     <Compile Include="ViewModel\Ticker.cs" />
     <Compile Include="ViewModel\UCViewModel.cs" />
+    <Compile Include="ViewModel\Windows\CalculateRemainderViewModel.cs" />
+    <Compile Include="ViewModel\Windows\ChangeAmountViewModel.cs" />
     <Compile Include="ViewModel\Windows\FindProductViewModel.cs" />
     <Compile Include="ViewModel\Windows\MainWindowViewModel.cs" />
     <Compile Include="Model\User.cs" />

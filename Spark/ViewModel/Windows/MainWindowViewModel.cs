@@ -17,7 +17,8 @@ namespace Spark.ViewModel.Windows
     {
         public FindProductCommand findProduct => new FindProductCommand(this);
         public SettingCommand settingCommand => new SettingCommand(this);
-        System.Timers.Timer timer;
+        public ChangeAmountCommand amountCommand => new ChangeAmountCommand(this);
+        public CalculateRemainderCommand remainderCommand => new CalculateRemainderCommand(this);
         public string Username { get; set; }
         public Window Window { get; set; }
         public MainWindowViewModel()
