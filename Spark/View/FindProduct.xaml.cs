@@ -21,13 +21,14 @@ namespace Spark.View
     public partial class FindProduct : Window
     {
         FindProductViewModel findProductVM;
-        public FindProduct()
+        public FindProduct(FindProductViewModel findProductVM)
         {
             InitializeComponent();
-            findProductVM = new FindProductViewModel();
+            this.findProductVM = findProductVM;
             DataContext = this.findProductVM;
             findProductVM.CurrentWindow = this;
         }
 
+       
     }
 }

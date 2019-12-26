@@ -1,6 +1,6 @@
 ﻿using Spark.ViewModel.Selling;
 
-namespace Spark.Commands.MainWindow
+namespace Spark.Commands
 {
     public class NewSellingCommandBase
     {

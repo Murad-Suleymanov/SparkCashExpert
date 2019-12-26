@@ -65,7 +65,7 @@
         </Grid.ColumnDefinitions>
         <TextBox Grid.Row="0" Grid.ColumnSpan="7" Background="White" materialdesign:HintAssist.Hint="Məhsulun barkodu" Margin="20,20,20,10" VerticalContentAlignment="Center" FontSize="30"/>
         <DataGrid Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="4" Content="SEÇ" Style="{StaticResource btnChoose}"/>
+        <Button Grid.Row="6" Grid.ColumnSpan="4" Content="SEÇ" Style="{StaticResource btnChoose}" Command="{Binding chooseProductCommand}"/>
         <Button Grid.Column="4" Grid.Row="1" Height="Auto" Content="1" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="5" Grid.Row="1" Height="Auto" Content="2" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="6" Grid.Row="1" Height="Auto" Content="3" Style="{StaticResource btnRight}"/>

@@ -1,14 +1,9 @@
-﻿using Spark.Commands.CalculateRemainder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Spark.Commands;
 
 namespace Spark.ViewModel.Windows
 {
     public class CalculateRemainderViewModel : WindowViewModel
     {
-        public CancelCommand cancelCommand => new CancelCommand(this);
+        public CalculateRemainderCancelCommand cancelCommand => new CalculateRemainderCancelCommand(this);
     }
 }

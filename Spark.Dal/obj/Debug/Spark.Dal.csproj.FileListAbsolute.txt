@@ -1,0 +1,12 @@
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\Spark.Dal.dll.config
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\Spark.Dal.dll
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\Spark.Dal.pdb
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\EntityFramework.dll
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\EntityFramework.xml
+C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.csproj.CopyComplete
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.dll
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.pdb
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.csprojAssemblyReference.cache

@@ -1,15 +1,10 @@
-﻿using Spark.Commands.ChangeAmount;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Spark.Commands;
 
 namespace Spark.ViewModel.Windows
 {
-    public class ChangeAmountViewModel:WindowViewModel
+    public class ChangeAmountViewModel : WindowViewModel
     {
-        public CancelCommand cancelCommand => new CancelCommand(this);
+        public ChangeAmountCancelCommand cancelCommand => new ChangeAmountCancelCommand(this);
         private int Exam;
 
         public int EXAM

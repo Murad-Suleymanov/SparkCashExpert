@@ -1,15 +1,8 @@
-﻿using Spark.Commands.MainWindow;
+﻿using Spark.Commands;
+using Spark.Dal.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Timers;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Threading;
 
 namespace Spark.ViewModel.Windows
 {
@@ -19,34 +12,25 @@ namespace Spark.ViewModel.Windows
         public SettingCommand settingCommand => new SettingCommand(this);
         public ChangeAmountCommand amountCommand => new ChangeAmountCommand(this);
         public CalculateRemainderCommand remainderCommand => new CalculateRemainderCommand(this);
+        public InsertInvoiceCommand insertInvoiceCommand => new InsertInvoiceCommand(this);
         public string Username { get; set; }
         public Window Window { get; set; }
         public MainWindowViewModel()
         {
-            DateTimeChanged();
         }
 
-        private void DateTimeChanged()
+        ObservableCollection<ProductDAO> dataGridProducts = new ObservableCollection<ProductDAO>();
+
+        public ObservableCollection<ProductDAO> DataGridProducts
         {
-            System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Interval = 1000; // 1 second updates
-            timer.Elapsed += timer_Elapsed;
-            timer.Start();
+            get => dataGridProducts;
+            set
+            {
+                dataGridProducts = value;
+                OnPropertyChanged(nameof(DataGridProducts));
+            }
         }
 
-
-        //private string changeDateTime = string.Format("{0}:{1}:{2}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-
-
-        //public string ChangeDateTime
-        //{
-        //    get => changeDateTime; 
-        //    set
-        //    {
-        //        changeDateTime = value; 
-        //        OnPropertyChanged(nameof(ChangeDateTime));
-        //    }
-        //}
 
         private string cashierName;
 
@@ -86,19 +70,5 @@ namespace Spark.ViewModel.Windows
             }
         }
 
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-
-        public void timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Now = DateTime.Now;
-            //PropertyChanged += new PropertyChangedEventHandler(NowChanged(this, new PropertyChangedEventArgs(nameof(Now)));
-        }
-
-        public void NowChanged(object sender, PropertyChangedEventArgs e)
-        {
-            
-        }
     }
 }

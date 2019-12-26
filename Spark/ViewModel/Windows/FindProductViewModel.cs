@@ -1,16 +1,13 @@
-﻿using Spark.Commands.FindProduct;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Spark.Commands;
 
 namespace Spark.ViewModel.Windows
 {
-    public class FindProductViewModel:WindowViewModel
+    public class FindProductViewModel : WindowViewModel
     {
-        public CancelCommand cancelCommand => new CancelCommand(this);
+        public FindProductCancelCommand cancelCommand => new FindProductCancelCommand(this);
+        public ChooseProductCommand chooseProductCommand => new ChooseProductCommand(this);
+        public MainWindowViewModel MainWindowVM { get; set; }
+
         private string barcode;
 
         public string Barcode
@@ -22,6 +19,5 @@ namespace Spark.ViewModel.Windows
                 OnPropertyChanged(nameof(Barcode));
             }
         }
-
     }
 }

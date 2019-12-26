@@ -17,8 +17,6 @@ C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\App.baml
 C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\Spark.csproj.CopyComplete
 C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\MaterialDesignColors.dll
 C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\MaterialDesignColors.pdb
-C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\View\MainWindow.baml
-C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\View\MainWindow.g.cs
 C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\UserControl\SellingControl.baml
 C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\UserControl\SellingControl.g.cs
 C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\View\FindProduct.g.cs
@@ -70,3 +68,12 @@ C:\Users\User\Documents\Projects\Spark-Kassa\Spark\obj\Debug\Spark.csproj.CoreCo
 C:\Users\User\Documents\Projects\Spark-Kassa\Spark\obj\Debug\Spark.csproj.CopyComplete
 C:\Users\User\Documents\Projects\Spark-Kassa\Spark\obj\Debug\Spark.exe
 C:\Users\User\Documents\Projects\Spark-Kassa\Spark\obj\Debug\Spark.pdb
+C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\View\MainPage.baml
+C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\View\MainPage.g.cs
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.dll
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.Dal.dll
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.Dal.pdb
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.Dal.dll.config
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.xml
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.SqlServer.xml

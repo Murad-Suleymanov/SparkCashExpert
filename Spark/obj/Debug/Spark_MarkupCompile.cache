@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Documents\Projects\Spark-Kassa\Spark\obj\Debug\
+C:\Users\Murad\source\repos\Spark\Spark\obj\Debug\
 Spark
 none
 false
 DEBUG;TRACE
-C:\Users\User\Documents\Projects\Spark-Kassa\Spark\App.xaml
-8268433022
+C:\Users\Murad\source\repos\Spark\Spark\App.xaml
+8-1476181236
 
-37-912839881
-15-901551324
-View\CalculateRemainder.xaml;View\ChangeAmount.xaml;View\DialogBox\ForDeleteInvoice.xaml;View\DialogBox\ForDeleteRow.xaml;View\FindProduct.xaml;View\MainWindow.xaml;UserControl\SellingControl.xaml;View\RequestAdmin.xaml;
+40-1750564928
+21542011868
+View\CalculateRemainder.xaml;View\ChangeAmount.xaml;View\DialogBox\ForDeleteInvoice.xaml;View\DialogBox\ForDeleteRow.xaml;View\FindProduct.xaml;View\MainPage.xaml;UserControl\SellingControl.xaml;View\RequestAdmin.xaml;
 
 False
 
