@@ -17,7 +17,18 @@ namespace Spark.Dal.DataAccess
 
         public async Task<InvoiceDetailDAO> GetFromReader(SqlDataReader rdr)
         {
-            throw new System.NotImplementedException();
+            return new InvoiceDetailDAO
+            {
+                ID = Convert.ToInt32(rdr["ID"]),
+                Count = Convert.ToDouble(rdr["Count"]),
+                Invoice = await new SqlInvoiceDAORepository(new SqlContext())
+                .GetByID(Convert.ToInt32(rdr["InvoiceID"])),
+                CurrentPrice = Convert.ToDouble(rdr["CurrentPrice"]),
+                Product = await new SqlProductDAORepository(new SqlContext())
+                .GetByID(Convert.ToInt32(rdr["ProductID"])),
+                TotalSum = Convert.ToDouble(rdr["TotalSum"]),
+                IsCanceled = Convert.ToBoolean(rdr["IsCanceled"])
+            };
         }
 
         public async Task<InvoiceDetailDAO> GetByID(int id)
@@ -32,7 +43,7 @@ namespace Spark.Dal.DataAccess
                     cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.HasRows)
+                        if (rdr.Read())
                         {
                             var d = await GetFromReader(rdr);
                             con.Close();
@@ -61,7 +72,7 @@ namespace Spark.Dal.DataAccess
                             cmd.Parameters.Add("@InvoiceID", SqlDbType.Int).Value = obj.Invoice.ID;
                             cmd.Parameters.Add("@ProductID", SqlDbType.Int).Value = obj.Product.ID;
                             cmd.Parameters.Add("@Count", SqlDbType.Float).Value = obj.Count;
-                            cmd.Parameters.Add("@CurrentPrice", SqlDbType.Float).Value = obj.CuurentPrice;
+                            cmd.Parameters.Add("@CurrentPrice", SqlDbType.Float).Value = obj.CurrentPrice;
                             cmd.Parameters.Add("@TotalSum", SqlDbType.Float).Value = obj.TotalSum;
                             cmd.Parameters.Add("@IsCanceled", SqlDbType.Bit).Value = obj.IsCanceled;
                             cmd.ExecuteNonQuery();

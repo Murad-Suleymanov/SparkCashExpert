@@ -18,7 +18,13 @@ namespace Spark.Dal.DataAccess
 
         public async Task<OwnerDAO> GetFromReader(SqlDataReader rdr)
         {
-            throw new NotImplementedException();
+            return new OwnerDAO
+            {
+                ID = Convert.ToInt32(rdr["ID"]),
+                User = await new SqlUserDAORepository(new SqlContext())
+                .GetByID(Convert.ToInt32(rdr["UserID"])),
+                BankAccountNumber = Convert.ToInt32(rdr["BankAccountNumber"])
+            };
         }
 
         public async Task<OwnerDAO> GetByID(int id)

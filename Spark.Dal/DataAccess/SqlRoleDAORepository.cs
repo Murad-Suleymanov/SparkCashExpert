@@ -1,43 +1,38 @@
 ﻿using Spark.Dal.Domain.Abstract;
 using Spark.Dal.Domain.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Spark.Dal.DataAccess
 {
-    public class SqlProductTypeDAORepository : IProductTypeDAORepository
+    public class SqlRoleDAORepository : IRoleDAORepository
     {
         readonly SqlContext db;
-        public SqlProductTypeDAORepository(SqlContext db)
+        public SqlRoleDAORepository(SqlContext db)
         {
             this.db = db;
         }
 
-        public async Task<ProductTypeDAO> GetFromReader(SqlDataReader rdr)
+        public async Task<RoleDAO> GetFromReader(SqlDataReader rdr)
         {
-            return new ProductTypeDAO
+            return new RoleDAO
             {
-                ID = Convert.ToInt32(rdr["ID"]),
-                Name = Convert.ToString(rdr["Name"]),
-                Store = await new SqlStoreDAORepository(new SqlContext())
-                .GetByID(Convert.ToInt32(rdr["StoreID"]))
+                ID = Convert.ToString(rdr["Id"]),
+                Name = Convert.ToString(rdr["Name"])
             };
         }
 
-        public async Task<ProductTypeDAO> GetByID(int id)
+        public async Task<RoleDAO> GetByID(int id)
         {
             using (SqlConnection con = new SqlConnection(db.ConnectionString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SP_GetProductTypeByID", con))
+                using (SqlCommand cmd = new SqlCommand("SP_GetRoleById", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@ID", SqlDbType.NVarChar, 128).Value = id.ToString();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         if (rdr.Read())
@@ -52,5 +47,6 @@ namespace Spark.Dal.DataAccess
                 return null;
             }
         }
+
     }
 }

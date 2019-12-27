@@ -17,7 +17,15 @@ namespace Spark.Dal.DataAccess
 
         public async Task<StoreDAO> GetFromReader(SqlDataReader rdr)
         {
-            throw new NotImplementedException();
+            return new StoreDAO
+            {
+                ID=Convert.ToInt32(rdr["ID"]),
+                Name= Convert.ToString(rdr["Name"]),
+                Address = Convert.ToString("Address"),
+                Owner=await new SqlOwnerDAORepository(new SqlContext())
+                .GetByID(Convert.ToInt32(rdr["ID"])),
+                StorePin = Convert.ToString(rdr["StorePin"])
+            };
         }
 
         public async Task<StoreDAO> GetByID(int id)
@@ -31,7 +39,7 @@ namespace Spark.Dal.DataAccess
                     cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.HasRows)
+                        if (rdr.Read())
                         {
                             var d = await GetFromReader(rdr);
                             con.Close();

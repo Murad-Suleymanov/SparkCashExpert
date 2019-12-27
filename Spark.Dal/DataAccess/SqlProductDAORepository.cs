@@ -18,7 +18,17 @@ namespace Spark.Dal.DataAccess
 
         public async Task<ProductDAO> GetFromReader(SqlDataReader rdr)
         {
-            throw new NotImplementedException();
+            return new ProductDAO
+            {
+                ID = Convert.ToInt32(rdr["ID"]),
+                Barcode = Convert.ToString(rdr["Barcode"]),
+                Count = Convert.ToDouble(rdr["Count"]),
+                Name = Convert.ToString(rdr["Name"]),
+                //ProductType = await new SqlProductTypeDAORepository(new SqlContext())
+                //.GetByID(Convert.ToInt32(rdr["ProductType"])),
+                PurschasePrice = Convert.ToDouble(rdr["PurchasePrice"]),
+                SellPrice = Convert.ToDouble(rdr["SellPrice"])
+            };
         }
 
         public async Task<ProductDAO> GetByID(int id)
@@ -26,13 +36,13 @@ namespace Spark.Dal.DataAccess
             using (SqlConnection con = new SqlConnection(db.ConnectionString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SP_GetProductByID", con))
+                using (SqlCommand cmd = new SqlCommand("SP_GetProductById", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.HasRows)
+                        if (rdr.Read())
                         {
                             var d = await GetFromReader(rdr);
                             con.Close();

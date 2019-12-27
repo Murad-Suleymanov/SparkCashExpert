@@ -16,32 +16,20 @@ namespace Spark.Commands
 
         public override void Execute(object parameter)
         {
-            UserDAO user = new UserDAO
-            {
-                ID = 1.ToString(),
-                EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
-                UserName = "Murad",
-                Name = "Murad",
-                Surname = "Suleymanov",
-                Patronmyc = "Eldeniz",
-                TwoFactoryEnabled = true,
-                PasswordHash = 123.ToString(),
-                AccesFailedCount = 1,
-                CreateDate = new DateTime(1998, 08, 22),
-                RegUser = 1.ToString()
-            };
+            SqlInvoiceDetailDAORepository sqlUserDAO = new SqlInvoiceDetailDAORepository(new SqlContext());
+
+            InvoiceDetailDAO user = sqlUserDAO.GetByID(1).GetAwaiter().GetResult();
             mainWindowVM.DataGridProducts.Add(new ProductDAO { Barcode = "12345", Count = 1, Name = "Kere yagi", SellPrice = 12 });
-            SqlInvoiceDAORepository sql = new SqlInvoiceDAORepository(new SqlContext());
-            sql.InsertOrUpdate(new InvoiceDAO
-            {
-                ID = 2,
-                InvoiceDate = new DateTime(1998, 08, 22),
-                InvoiceNumber = 1,
-                InvoiceType = 1,
-                IsCanceled = true,
-                User = user
-            });
+            //SqlInvoiceDAORepository sql = new SqlInvoiceDAORepository(new SqlContext());
+            //sql.InsertOrUpdate(new InvoiceDAO
+            //{
+            //    ID = 2,
+            //    InvoiceDate = new DateTime(1998, 08, 22),
+            //    InvoiceNumber = 1,
+            //    InvoiceType = 1,
+            //    IsCanceled = true,
+            //    User = user
+            //});
         }
     }
 }

@@ -39,9 +39,11 @@ namespace Spark.Dal.DataAccess
                     cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.HasRows)
+                        if (rdr.Read())
                         {
                             var d = await GetFromReader(rdr);
+                            con.Close();
+                            return d;
                         }
                     }
                 }

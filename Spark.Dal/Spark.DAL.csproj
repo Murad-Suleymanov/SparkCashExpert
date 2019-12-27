@@ -56,26 +56,32 @@
     <Compile Include="DataAccess\SqlOwnerDAORepository.cs" />
     <Compile Include="DataAccess\SqlProductDAORepository.cs" />
     <Compile Include="DataAccess\SqlProductTypeDAORepository.cs" />
+    <Compile Include="DataAccess\SqlRoleDAORepository.cs" />
     <Compile Include="DataAccess\SqlStoreDAORepository.cs" />
     <Compile Include="DataAccess\SqlUnifOfWok.cs" />
     <Compile Include="DataAccess\SqlUserDAORepository.cs" />
+    <Compile Include="DataAccess\SqlUserRoleDAORepository.cs" />
     <Compile Include="Domain\Abstract\IBaseDAO.cs" />
     <Compile Include="Domain\Abstract\IGenericDAORepository.cs" />
     <Compile Include="Domain\Abstract\IInvoiceDAORepository.cs" />
     <Compile Include="Domain\Abstract\IOwnerDAORepository.cs" />
     <Compile Include="Domain\Abstract\IProductTypeDAORepository.cs" />
+    <Compile Include="Domain\Abstract\IRoleDAORepository.cs" />
     <Compile Include="Domain\Abstract\IStoreDAORepository.cs" />
     <Compile Include="Domain\Abstract\IUserDAORepository.cs" />
+    <Compile Include="Domain\Abstract\IUserRoleDAORepository.cs" />
     <Compile Include="Domain\Entities\InvoiceDetailDAO.cs" />
     <Compile Include="Domain\Abstract\IInvoiceDetailDAORepository.cs" />
     <Compile Include="Domain\Abstract\IProductDAORepository.cs" />
     <Compile Include="Domain\Abstract\IUnifOfWork.cs" />
     <Compile Include="Domain\Entities\InvoiceDAO.cs" />
+    <Compile Include="Domain\Entities\RoleDAO.cs" />
     <Compile Include="Domain\Entities\UserDAO.cs" />
     <Compile Include="Domain\Entities\OwnerDAO.cs" />
     <Compile Include="Domain\Entities\ProductDAO.cs" />
     <Compile Include="Domain\Entities\ProductTypeDAO.cs" />
     <Compile Include="Domain\Entities\StoreDAO.cs" />
+    <Compile Include="Domain\Entities\UserRoleDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
