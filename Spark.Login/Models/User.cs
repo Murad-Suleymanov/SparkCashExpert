@@ -1,16 +1,14 @@
-﻿using Spark.Login.Commands.Login;
-using Spark.Login.ViewModel;
-using System;
+﻿using Spark.Dal.Domain.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Spark.Login.Model
 {
     public class User 
     {
+        public int ID { get; set; }
         public string UserName { get; set; }
+        public string Password { get; set; }
+
+        public List<UserRoleDAO> Roles { get; set; }
     }
 }

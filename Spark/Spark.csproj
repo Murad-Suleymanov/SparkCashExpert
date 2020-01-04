@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -76,39 +79,51 @@
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\CalculateRemainder\CalculateRemainderCommandBase.cs" />
     <Compile Include="Commands\CalculateRemainder\CalculateRemainderCancelCommand.cs" />
+    <Compile Include="Commands\CalculateRemainder\ConfirmInvoiceCommand.cs" />
     <Compile Include="Commands\ChangeAmount\ChangeAmountCancelCommand.cs" />
     <Compile Include="Commands\ChangeAmount\ChangeAmountCommandBase.cs" />
+    <Compile Include="Commands\ChangeAmount\ChooseCountCommand.cs" />
+    <Compile Include="Commands\DeleteRow\DeleteRowCommandBase.cs" />
+    <Compile Include="Commands\DeleteRow\ResponseRowCommand.cs" />
     <Compile Include="Commands\FindProduct\FindProductCancelCommand.cs" />
     <Compile Include="Commands\FindProduct\ChooseProductCommand.cs" />
     <Compile Include="Commands\FindProduct\FindProductCommandBase.cs" />
     <Compile Include="Commands\MainWindow\CalculateRemainderCommand.cs" />
     <Compile Include="Commands\MainWindow\ChangeAmountCommand.cs" />
+    <Compile Include="Commands\MainWindow\ConfirmInvoiceCommand.cs" />
+    <Compile Include="Commands\MainWindow\DeleteInvoiceDetailCommand.cs" />
     <Compile Include="Commands\MainWindow\FindProductCommand.cs" />
     <Compile Include="Commands\MainWindow\InsertInvoiceCommand.cs" />
     <Compile Include="Commands\MainWindow\MainWindowCommandBase.cs" />
     <Compile Include="Commands\MainWindow\SettingCommand.cs" />
+    <Compile Include="Commands\RequestAdminC\RequestAdminCommandBase.cs" />
+    <Compile Include="Commands\RequestAdminC\SignInCommand.cs" />
     <Compile Include="Commands\SellingCommand\NewSellingCommandBase.cs" />
     <Compile Include="Constans.cs" />
+    <Compile Include="Models\Abstract\IBaseDTO.cs" />
+    <Compile Include="Models\Entities\InvoiceDetailDTO.cs" />
+    <Compile Include="Models\Entities\ProductDTO.cs" />
     <Compile Include="Helper\CallUC.cs" />
+    <Compile Include="Models\Entities\UserDTO.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\Selling\SellingViewModel.cs" />
     <Compile Include="ViewModel\Ticker.cs" />
     <Compile Include="ViewModel\UCViewModel.cs" />
     <Compile Include="ViewModel\Windows\CalculateRemainderViewModel.cs" />
     <Compile Include="ViewModel\Windows\ChangeAmountViewModel.cs" />
+    <Compile Include="ViewModel\Windows\DeleteRowViewModel.cs" />
     <Compile Include="ViewModel\Windows\FindProductViewModel.cs" />
     <Compile Include="ViewModel\Windows\MainWindowViewModel.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Product.cs" />
+    <Compile Include="ViewModel\Windows\RequestAdminViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="UserControl\SellingControl.xaml.cs">
       <DependentUpon>SellingControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DialogBox\ForDeleteInvoice.xaml.cs">
-      <DependentUpon>ForDeleteInvoice.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DialogBox\ForDeleteRow.xaml.cs">
       <DependentUpon>ForDeleteRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogBox\ForDeleteInvoice.xaml.cs">
+      <DependentUpon>ForDeleteInvoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RequestAdmin.xaml.cs">
       <DependentUpon>RequestAdmin.xaml</DependentUpon>
@@ -121,11 +136,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DialogBox\ForDeleteInvoice.xaml">
+    <Page Include="View\DialogBox\ForDeleteRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DialogBox\ForDeleteRow.xaml">
+    <Page Include="View\DialogBox\ForDeleteInvoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,11 +220,16 @@
     <Resource Include="Images\trash-can.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Spark.BusinessLogich\Spark.BusinessLogich.csproj">
+      <Project>{774390f7-4282-44ce-8313-a8cdc11d4fdc}</Project>
+      <Name>Spark.BusinessLogich</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Spark.Dal\Spark.DAL.csproj">
       <Project>{e6a9f2a6-6a8a-47f4-89e9-2604829e072a}</Project>
       <Name>Spark.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0-ci828\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

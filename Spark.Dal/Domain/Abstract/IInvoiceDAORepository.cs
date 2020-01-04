@@ -5,6 +5,6 @@ namespace Spark.Dal.Domain.Abstract
 {
     public interface IInvoiceDAORepository : IGenericDAORepository<InvoiceDAO>
     {
-        Task<bool> InsertOrUpdate(InvoiceDAO obj);
+        Task<int> InsertOrUpdate(InvoiceDAO obj);
     }
 }

@@ -5,8 +5,8 @@ C:\Users\Murad\source\repos\Spark\Spark.WCF\bin\EntityFramework.dll
 C:\Users\Murad\source\repos\Spark\Spark.WCF\bin\EntityFramework.SqlServer.dll
 C:\Users\Murad\source\repos\Spark\Spark.WCF\bin\EntityFramework.xml
 C:\Users\Murad\source\repos\Spark\Spark.WCF\bin\EntityFramework.SqlServer.xml
-C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.csprojAssemblyReference.cache
 C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.csproj.CoreCompileInputs.cache
 C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.csproj.CopyComplete
 C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.dll
 C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.pdb
+C:\Users\Murad\source\repos\Spark\Spark.WCF\obj\Debug\Spark.WCF.csprojAssemblyReference.cache

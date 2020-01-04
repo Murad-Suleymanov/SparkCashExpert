@@ -146,6 +146,10 @@
     <Resource Include="Image\password %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Spark.Dal\Spark.DAL.csproj">
+      <Project>{e6a9f2a6-6a8a-47f4-89e9-2604829e072a}</Project>
+      <Name>Spark.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Spark\Spark.csproj">
       <Project>{feeded25-5fe0-4899-903d-172e7bc104a7}</Project>
       <Name>Spark</Name>

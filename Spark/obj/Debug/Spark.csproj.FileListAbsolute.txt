@@ -77,3 +77,8 @@ C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.Dal.pdb
 C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.Dal.dll.config
 C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.xml
 C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\AutoMapper.dll
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\AutoMapper.pdb
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\AutoMapper.xml
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.BusinessLogich.dll
+C:\Users\Murad\source\repos\Spark\Spark\bin\Debug\Spark.BusinessLogich.pdb

@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Spark.View.DialogBox
 {
     /// <summary>
-    /// Interaction logic for ForDeleteInvoice.xaml
+    /// Interaction logic for ForDeleteRow.xaml
     /// </summary>
-    public partial class ForDeleteInvoice : Window
+    public partial class ForDeleteRow : Window
     {
-        public ForDeleteInvoice()
+        public ForDeleteRow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

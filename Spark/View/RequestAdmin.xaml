@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Spark.View"
         mc:Ignorable="d"
-        Title="RequestAdmin" Height="300" Width="500" WindowStyle="None" ResizeMode="NoResize">
+        Title="RequestAdmin" Height="300" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="lblHeader" TargetType="{x:Type Label}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -51,9 +51,28 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Style="{StaticResource lblHeader}"/>
-        <TextBox Grid.Row="1" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="İstifadəçi adı"/>
-        <PasswordBox Grid.Row="2" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="Şifrə"/>
-        <Button Grid.Row="3" Style="{StaticResource btnLogin}"/>
+        <TextBox Text="{Binding Username}"  Grid.Row="1" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="İstifadəçi adı"/>
+        <PasswordBox x:Name="PasswordTxt" Grid.Row="2" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="Şifrə">
+            <PasswordBox.InputBindings>
+                <KeyBinding Command="{Binding SignIn}" CommandParameter="{Binding ElementName=PasswordTxt}" Key="Enter"/>
+            </PasswordBox.InputBindings>
+        </PasswordBox>
+        <Button Grid.Row="3" Height="Auto">
+            <Button.Template>
+                <ControlTemplate>
+                    <Button  Style="{StaticResource btnLogin}" Command="{Binding SignIn}" CommandParameter="{Binding ElementName=PasswordTxt}"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <Button Grid.Row="3" Style="{StaticResource btnCancel}"/>
+
+        <TextBlock Text="İstifadəçi adı və ya şifrə yanlışdır" Grid.Row="3" VerticalAlignment="Bottom"   FontFamily="Times New Roman" FontSize="15" 
+                           Foreground="Red" Margin="150,0,-75,3"  Visibility="{Binding NoUserErrorVisibility}"/>
+
+        <TextBlock Text="Sizin hüququnuz yoxdur" Grid.Row="3" VerticalAlignment="Bottom"   FontFamily="Times New Roman" FontSize="15" 
+                           Foreground="Red" Margin="150,0,-75,3"  Visibility="{Binding RoleErrorVisibility}"/>
+
+        <TextBlock Text="Zəhmət olmasa xanaları doldurun" Grid.Row="3" VerticalAlignment="Bottom"   FontFamily="Times New Roman" FontSize="15" 
+                           Foreground="Red" Margin="150,0,-75,3"  Visibility="{Binding EmptyErrorVisibility}"/>
     </Grid>
 </Window>

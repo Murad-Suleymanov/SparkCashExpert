@@ -1,0 +1,6 @@
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\bin\Debug\Spark.BusinessLogich.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\bin\Debug\Spark.BusinessLogich.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\obj\Debug\Spark.BusinessLogich.csprojAssemblyReference.cache
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\obj\Debug\Spark.BusinessLogich.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\obj\Debug\Spark.BusinessLogich.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogich\obj\Debug\Spark.BusinessLogich.pdb

@@ -1,5 +1,7 @@
 ﻿using Spark.Commands;
-using Spark.Dal.Domain.Entities;
+using Spark.Commands.MainWindow;
+using Spark.Model;
+using Spark.Models.Entities;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -13,15 +15,42 @@ namespace Spark.ViewModel.Windows
         public ChangeAmountCommand amountCommand => new ChangeAmountCommand(this);
         public CalculateRemainderCommand remainderCommand => new CalculateRemainderCommand(this);
         public InsertInvoiceCommand insertInvoiceCommand => new InsertInvoiceCommand(this);
-        public string Username { get; set; }
+        public DeleteInvoiceDetailCommand deleteDetailCommand => new DeleteInvoiceDetailCommand(this);
+        public InvoiceDetailDTO InvoiceDetail { get; set; }
+        public ChangeAmountViewModel ChangeAmountVM { get; set; }
+        public UserDTO User { get; set; }
         public Window Window { get; set; }
-        public MainWindowViewModel()
+        public MainWindowViewModel() { }
+
+
+        private string totalSum = "0";
+
+        public string TotalSum
         {
+            get => totalSum;
+            set
+            {
+                totalSum = value;
+                OnPropertyChanged(nameof(TotalSum));
+            }
         }
 
-        ObservableCollection<ProductDAO> dataGridProducts = new ObservableCollection<ProductDAO>();
+        private string giftSum="0";
 
-        public ObservableCollection<ProductDAO> DataGridProducts
+        public string GiftSum
+        {
+            get { return giftSum; }
+            set
+            {
+                giftSum = value;
+                OnPropertyChanged(nameof(GiftSum));
+            }
+        }
+        
+
+        ObservableCollection<InvoiceDetailDTO> dataGridProducts = new ObservableCollection<InvoiceDetailDTO>();
+
+        public ObservableCollection<InvoiceDetailDTO> DataGridProducts
         {
             get => dataGridProducts;
             set
@@ -30,7 +59,6 @@ namespace Spark.ViewModel.Windows
                 OnPropertyChanged(nameof(DataGridProducts));
             }
         }
-
 
         private string cashierName;
 
@@ -43,8 +71,6 @@ namespace Spark.ViewModel.Windows
                 OnPropertyChanged(nameof(CashierName));
             }
         }
-        public DateTime Now { get; set; }
-
 
         private string cashRegister = "Kassa 1";
 

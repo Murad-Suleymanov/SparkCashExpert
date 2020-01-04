@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:Spark.View"
         mc:Ignorable="d"
-        Title="FindProduct" Height="600" Width="850" WindowStyle="None" WindowStartupLocation="Manual" Cursor="Hand" ShowInTaskbar="False" Icon="/Spark;component/Images/search-plus.png" HorizontalAlignment="Right" ResizeMode="NoResize">
+        Title="FindProduct" Height="600" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" Cursor="Hand" ShowInTaskbar="False" Icon="/Spark;component/Images/search-plus.png" HorizontalAlignment="Right" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="btnOthers" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#9fd356" />
@@ -34,7 +33,7 @@
             <Setter Property="FontSize" Value="40" />
             <Setter Property="FontFamily" Value="./#Segoe UI" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Margin" Value="20,10,20,10"/>
+            <Setter Property="Margin" Value="39,20,41,40"/>
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
@@ -43,6 +42,10 @@
             <Setter Property="Margin" Value="10,10,20,10"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="30"/>
+        </Style>
+        <Style x:Key="grdView" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
     </Window.Resources>
     <Grid Background="#342e37">
@@ -63,9 +66,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.ColumnSpan="7" Background="White" materialdesign:HintAssist.Hint="Məhsulun barkodu" Margin="20,20,20,10" VerticalContentAlignment="Center" FontSize="30"/>
-        <DataGrid Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="4" Content="SEÇ" Style="{StaticResource btnChoose}" Command="{Binding chooseProductCommand}"/>
+        <TextBox Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged}"  Grid.Row="0" Grid.ColumnSpan="7" Background="White" materialdesign:HintAssist.Hint="Məhsulun barkodu" Margin="20,20,20,10" VerticalContentAlignment="Center" FontSize="30"/>
+        <!--<DataGrid ItemsSource="{Binding Products}" Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4" SelectedItem="{Binding SelectedItem}"/>-->
+        <ListView ItemsSource="{Binding Products}" Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4" SelectedItem="{Binding SelectedItem}" Background="#FFF3E7E7" Foreground="#DD0A0909" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Adı" DisplayMemberBinding="{Binding Name}" Width="360" />
+                    <GridViewColumn Header="Dəyəri" DisplayMemberBinding="{Binding Price}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="5" Grid.ColumnSpan="4" Content="SEÇ" Style="{StaticResource btnChoose}" Command="{Binding chooseProductCommand}" Margin="19,10,21,30"/>
         <Button Grid.Column="4" Grid.Row="1" Height="Auto" Content="1" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="5" Grid.Row="1" Height="Auto" Content="2" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="6" Grid.Row="1" Height="Auto" Content="3" Style="{StaticResource btnRight}"/>
@@ -79,6 +90,9 @@
         <Button Grid.Column="5" Grid.Row="4" Height="Auto" Content="0" Style="{StaticResource btnOthers}"/>
         <Button Grid.Column="6" Grid.Row="4" Height="Auto" Content="Sil" Style="{StaticResource btnRight}"/>
         <Button Command="{Binding cancelCommand}" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="5"  Content="X" Style="{StaticResource btnCancel}" />
+
+        <TextBlock Text="Bu barkodla başlayan məhsul yoxdur" Grid.Row="5" Grid.ColumnSpan="3" VerticalAlignment="Bottom"   FontFamily="Times New Roman" FontSize="15"  Background="White"
+                           Foreground="Red" Margin="29,0,106,2"  Visibility="{Binding ErrorVisibility}" Grid.Column="1" Width="auto" Height="18"/>
 
     </Grid>
 </Window>

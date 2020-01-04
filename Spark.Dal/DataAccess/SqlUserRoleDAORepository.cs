@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -50,10 +51,10 @@ namespace Spark.Dal.DataAccess
             }
         }
 
-        public async Task<UserRoleDAO> GetUserRoleWithUserID(UserDAO userDAO)
+        public async Task<List<UserRoleDAO>> GetUserRoleWithUserID(UserDAO userDAO)
         {
             using (SqlConnection con = new SqlConnection(db.ConnectionString))
-            {
+            {   
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("SP_GetUserRoleByUserId", con))
                 {
@@ -61,12 +62,14 @@ namespace Spark.Dal.DataAccess
                     cmd.Parameters.Add("@ID", SqlDbType.NVarChar, 128).Value = userDAO.ID;
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.Read())
+                        List<UserRoleDAO> roles = new List<UserRoleDAO>();
+                        while (rdr.Read())
                         {
                             var d = await GetFromReader(rdr);
-                            con.Close();
-                            return d;
+                            roles.Add(d);
                         }
+                        con.Close();
+                        return roles;
                     }
                 }
                 con.Close();

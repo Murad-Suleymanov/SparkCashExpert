@@ -9,4 +9,4 @@ C:\Users\Murad\source\repos\Spark\Spark.Dal\bin\Debug\EntityFramework.SqlServer.
 C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.csproj.CopyComplete
 C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.dll
 C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.pdb
-C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.Dal.csprojAssemblyReference.cache
+C:\Users\Murad\source\repos\Spark\Spark.Dal\obj\Debug\Spark.DAL.csprojAssemblyReference.cache

@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spark.View"
         mc:Ignorable="d"
-        Title="CalculateRemainder" Height="400" Width="700" WindowStyle="None" ResizeMode="NoResize">
+        Title="CalculateRemainder" Height="400" Width="700" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="btnChoose" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#9fd356"/>
@@ -58,19 +57,19 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Margin="20,0,20,0">
                 <Label Content="Yekun" FontWeight="Bold" FontSize="20" Foreground="White" />
-                <TextBox Background="White" Height="40" IsReadOnly="True"  FontSize="20"/>
+                <TextBox Text="{Binding TotalSum,Mode=OneWay}" Background="White" Height="40" IsReadOnly="True"  FontSize="20"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="20,0,20,0">
                 <Label Content="Nağd ödəniş" FontWeight="Bold" FontSize="20" Foreground="White" />
-                <TextBox Background="White" Height="40"  FontSize="20"/>
+                <TextBox Text="{Binding WithCash,Mode=TwoWay}" Background="White" Height="40"  FontSize="20"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="20,0,20,0">
                 <Label Content="Nağdsız ödəniş" FontWeight="Bold" FontSize="20" Foreground="White"/>
-                <TextBox Background="White" Height="40"  FontSize="20"/>
+                <TextBox Text="{Binding WithCart,Mode=TwoWay}" Background="White" Height="40"  FontSize="20"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Margin="20,0,20,0">
                 <Label Content="Qalıq" FontWeight="Bold" FontSize="20" Foreground="White" />
-                <TextBox Background="White" Height="40" IsReadOnly="True" FontSize="20"/>
+                <TextBox Text="{Binding Remainder,Mode=OneWay}" Background="White" Height="40" IsReadOnly="True" FontSize="20"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">
@@ -98,7 +97,7 @@
             <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="00"/>
             <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
             <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="C" Command="{Binding cancelCommand}"/>
-            <Button Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource btnChoose}"/>
+            <Button Command="{Binding confirmInvoiceCommand}" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource btnChoose}"/>
         </Grid>
     </Grid>
 </Window>

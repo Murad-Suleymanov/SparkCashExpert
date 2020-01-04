@@ -1,0 +1,16 @@
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\obj\Debug\Spark.BLL.csprojAssemblyReference.cache
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\obj\Debug\Spark.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\obj\Debug\Spark.BusinessLogic.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\obj\Debug\Spark.BusinessLogic.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.BusinessLogic.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.BusinessLogic.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.Dal.dll
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.exe
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.Dal.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.Dal.dll.config
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\Spark.exe.config
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\AutoMapper.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\Murad\source\repos\Spark\Spark.BusinessLogic\obj\Debug\Spark.BLL.csproj.CopyComplete

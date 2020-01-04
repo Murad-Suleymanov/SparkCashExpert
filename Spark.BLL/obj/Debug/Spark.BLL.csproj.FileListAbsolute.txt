@@ -1,0 +1,5 @@
+C:\Users\Murad\source\repos\Spark\Spark.BLL\bin\Debug\Spark.BLL.dll
+C:\Users\Murad\source\repos\Spark\Spark.BLL\bin\Debug\Spark.BLL.pdb
+C:\Users\Murad\source\repos\Spark\Spark.BLL\obj\Debug\Spark.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Spark\Spark.BLL\obj\Debug\Spark.BLL.dll
+C:\Users\Murad\source\repos\Spark\Spark.BLL\obj\Debug\Spark.BLL.pdb

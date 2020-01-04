@@ -52,15 +52,16 @@ namespace Spark.Dal.DataAccess
             }
         }
 
-        public Task<bool> InsertOrUpdate(InvoiceDAO obj)
+        public Task<int> InsertOrUpdate(InvoiceDAO obj)
         {
-            return Task.Run<bool>(() =>
+            return Task.Run<int>(() =>
             {
                 using (SqlConnection con = new SqlConnection(db.ConnectionString))
                 {
                     con.Open();
                     try
                     {
+                        int modified = 0;
                         using (SqlCommand cmd = new SqlCommand("SP_InsertOrUpdateInvoice", con))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -71,12 +72,16 @@ namespace Spark.Dal.DataAccess
                             cmd.Parameters.Add("@InvoiceNumber", SqlDbType.Int).Value = obj.InvoiceNumber;
                             cmd.Parameters.Add("@Canceled", SqlDbType.Bit).Value = obj.IsCanceled;
                             cmd.ExecuteNonQuery();
+                            modified = Convert.ToInt32(cmd.ExecuteScalar());
                         }
-                        return true;
+                        if (obj.ID != 0)
+                            return obj.ID;
+                        else
+                            return modified;
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        return 0;
                     }
                     finally
                     {

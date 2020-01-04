@@ -58,6 +58,7 @@
     <Compile Include="DataAccess\SqlProductTypeDAORepository.cs" />
     <Compile Include="DataAccess\SqlRoleDAORepository.cs" />
     <Compile Include="DataAccess\SqlStoreDAORepository.cs" />
+    <Compile Include="DataAccess\SqlTransaction.cs" />
     <Compile Include="DataAccess\SqlUnifOfWok.cs" />
     <Compile Include="DataAccess\SqlUserDAORepository.cs" />
     <Compile Include="DataAccess\SqlUserRoleDAORepository.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Domain\Abstract\IProductTypeDAORepository.cs" />
     <Compile Include="Domain\Abstract\IRoleDAORepository.cs" />
     <Compile Include="Domain\Abstract\IStoreDAORepository.cs" />
+    <Compile Include="Domain\Abstract\ITransaction.cs" />
     <Compile Include="Domain\Abstract\IUserDAORepository.cs" />
     <Compile Include="Domain\Abstract\IUserRoleDAORepository.cs" />
     <Compile Include="Domain\Entities\InvoiceDetailDAO.cs" />

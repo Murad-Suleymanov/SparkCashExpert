@@ -4,7 +4,7 @@ namespace Spark.Commands
 {
     public class FindProductCancelCommand : FindProductCommandBase
     {
-        FindProductViewModel findProductVM;
+        readonly FindProductViewModel findProductVM;
         public FindProductCancelCommand(FindProductViewModel findProductVM) : base(findProductVM)
         {
             this.findProductVM = findProductVM;

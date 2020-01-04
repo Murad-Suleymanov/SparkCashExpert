@@ -1,5 +1,6 @@
 ﻿using Spark.Dal.Domain.Entities;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace Spark.Dal.Domain.Abstract
@@ -8,5 +9,6 @@ namespace Spark.Dal.Domain.Abstract
     {
         Task<ProductDAO> GetByBarcode(string barcode);
         Task<List<ProductDAO>> GetProductsLikeBarcode(string barcode);
+        Task<ObservableCollection<ProductDAO>> GetProductsLikeSearchString(string barcode);
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\bin\Debug\ConnectingLayer.dll
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\bin\Debug\ConnectingLayer.pdb
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\bin\Debug\Spark.WCF.dll
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\bin\Debug\Spark.WCF.pdb
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\bin\Debug\Spark.WCF.dll.config
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\obj\Debug\ConnectingLayer.csprojAssemblyReference.cache
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\obj\Debug\ConnectingLayer.csproj.CoreCompileInputs.cache
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\obj\Debug\ConnectingLayer.csproj.CopyComplete
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\obj\Debug\ConnectingLayer.dll
+C:\Users\Murad\source\repos\Spark\ConnectingLayer\obj\Debug\ConnectingLayer.pdb

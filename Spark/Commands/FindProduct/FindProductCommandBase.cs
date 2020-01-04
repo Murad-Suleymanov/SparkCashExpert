@@ -5,7 +5,7 @@ namespace Spark.Commands
 {
     public abstract class FindProductCommandBase : BaseCommand
     {
-        FindProductViewModel findProductVM;
+        readonly FindProductViewModel findProductVM;
         public FindProductCommandBase(FindProductViewModel findProductVM)
         {
             this.findProductVM = findProductVM;

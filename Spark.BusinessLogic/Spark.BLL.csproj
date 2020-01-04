@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,14 +44,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Entities\InvoiceDetailEntity.cs" />
+    <Compile Include="Calculation\TotalSumCalculate.cs" />
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\ProductEntity.cs" />
+    <Compile Include="Mappers\Abstraction\IMapper.cs" />
+    <Compile Include="Mappers\Abstraction\IProductMapper.cs" />
+    <Compile Include="Mappers\Abstraction\IUnitMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductMapper.cs" />
+    <Compile Include="Repositories\SqlUnitMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\Abstract\" />
-    <Folder Include="Mappers\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spark.Dal\Spark.DAL.csproj">
+      <Project>{E6A9F2A6-6A8A-47F4-89E9-2604829E072A}</Project>
+      <Name>Spark.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Spark\Spark.csproj">
+      <Project>{feeded25-5fe0-4899-903d-172e7bc104a7}</Project>
+      <Name>Spark</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

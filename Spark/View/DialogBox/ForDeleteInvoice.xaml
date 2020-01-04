@@ -1,13 +1,12 @@
-﻿<Window x:Class="Spark.View.DialogBox.ForDeleteInvoice"
+﻿<Window x:Class="Spark.View.DialogBox.ForDeleteRow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spark.View.DialogBox"
         mc:Ignorable="d"
-        Title="ForDeleteInvoice" Height="150" Width="500" ResizeMode="NoResize" WindowStyle="None">
+        Title="ForDeleteRow" Height="150" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#342e37">
-        <Label Foreground="White" Content="Sətiri silmək istədiyinizə əminsiniz?" FontSize="20" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        <Label Foreground="White" Content="Sənədi silmək istədiyinizə əminsiniz?" FontSize="20" HorizontalAlignment="Center" Margin="0,20,0,0"/>
         <Button Width="100" Margin="134,67,266,44" Background="#9fd356" Content="Bəli" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" Height="Auto" VerticalContentAlignment="Center"/>
         <Button Width="100" Height="Auto" Margin="254,67,96,44" Background="Red" Content="Xeyr" Foreground="White" FontSize="20" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"/>
     </Grid>

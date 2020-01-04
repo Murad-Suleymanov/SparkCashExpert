@@ -1,6 +1,6 @@
 ﻿namespace Spark.Dal.Domain.Abstract
 {
-    public interface IUnifOfWork
+    public interface IUnitOfWork
     {
         IProductDAORepository ProductDAORepository { get; }
         IInvoiceDAORepository InvoiceDAORepository { get; }
