@@ -45,6 +45,7 @@
     <Compile Include="Domain\Abstract\IBaseEntity.cs" />
     <Compile Include="Domain\Entities\InvoiceDetailEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Sender.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

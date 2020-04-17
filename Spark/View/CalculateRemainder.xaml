@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spark"
         mc:Ignorable="d"
         Title="CalculateRemainder" Height="400" Width="700" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -61,11 +62,13 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="20,0,20,0">
                 <Label Content="Nağd ödəniş" FontWeight="Bold" FontSize="20" Foreground="White" />
-                <TextBox Text="{Binding WithCash,Mode=TwoWay}" Background="White" Height="40"  FontSize="20"/>
+                <TextBox x:Name="WithCash" local:FocusExtension.IsFocused="True"    Text="{Binding WithCash,Mode=TwoWay}" Background="White" Height="40"  FontSize="20">
+                   
+                </TextBox>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="20,0,20,0">
                 <Label Content="Nağdsız ödəniş" FontWeight="Bold" FontSize="20" Foreground="White"/>
-                <TextBox Text="{Binding WithCart,Mode=TwoWay}" Background="White" Height="40"  FontSize="20"/>
+                <TextBox   Text="{Binding WithCart,Mode=TwoWay}" Background="White" Height="40"  FontSize="20"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Margin="20,0,20,0">
                 <Label Content="Qalıq" FontWeight="Bold" FontSize="20" Foreground="White" />
@@ -85,19 +88,20 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource btnLeft}" Content="1" />
-            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource btnCenter}" Content="2"/>
-            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource btnRight}" Content="3"/>
-            <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource btnLeft}" Content="4"/>
-            <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource btnCenter}" Content="5"/>
-            <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource btnRight}" Content="6"/>
-            <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource btnLeft}" Content="7"/>
-            <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource btnCenter}" Content="8"/>
-            <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource btnRight}" Content="9"/>
-            <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="00"/>
-            <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
-            <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="C" Command="{Binding cancelCommand}"/>
-            <Button Command="{Binding confirmInvoiceCommand}" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource btnChoose}"/>
+            <Button Command="{Binding addOneCRCommand}" Grid.Row="0" Grid.Column="0" Style="{StaticResource btnLeft}" Content="1" />
+            <Button Command="{Binding addTwoCRCommand}" Grid.Row="0" Grid.Column="1" Style="{StaticResource btnCenter}" Content="2"/>
+            <Button Command="{Binding addThreeCRCommand}" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnRight}" Content="3"/>
+            <Button Command="{Binding addFourCRCommand}" Grid.Row="1" Grid.Column="0" Style="{StaticResource btnLeft}" Content="4"/>
+            <Button Command="{Binding addFiveCRCommand}" Grid.Row="1" Grid.Column="1" Style="{StaticResource btnCenter}" Content="5"/>
+            <Button Command="{Binding addSixCRCommand}" Grid.Row="1" Grid.Column="2" Style="{StaticResource btnRight}" Content="6"/>
+            <Button Command="{Binding addSevenCRCommand}" Grid.Row="2" Grid.Column="0" Style="{StaticResource btnLeft}" Content="7"/>
+            <Button Command="{Binding addEightCRCommand}" Grid.Row="2" Grid.Column="1" Style="{StaticResource btnCenter}" Content="8"/>
+            <Button Command="{Binding addNineCRCommand}" Grid.Row="2" Grid.Column="2" Style="{StaticResource btnRight}" Content="9"/>
+            <Button Command="{Binding addPointCRCommand}" Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="."/>
+            <Button Command="{Binding addZeroCRCommand}" Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
+            <Button Command="{Binding deleteCRCommand}" Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="C"/>
+            <Button Command="{Binding confirmInvoiceCommand}" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource btnChoose}" Margin="19,10,14,10" Width="Auto"/>
+            <Button Command="{Binding cancelCommand}" Grid.Row="4" Grid.Column="2" Style="{StaticResource btnRight}" Background="Red" Content="X"/>
         </Grid>
     </Grid>
 </Window>

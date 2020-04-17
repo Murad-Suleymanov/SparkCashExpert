@@ -4,6 +4,8 @@ using Spark.ViewModel.Windows;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Spark.Commands.ChangeAmount
 {
@@ -18,26 +20,38 @@ namespace Spark.Commands.ChangeAmount
             this.mainWindowVM = changeAmountVM.MainVindowVM;
         }
 
-        public override void Execute(object parameter)
+        public async override void Execute(object parameter)
         {
             if (!string.IsNullOrWhiteSpace(changeAmountVM.Count))
             {
-                mainWindowVM.InvoiceDetail.Count = Convert.ToDouble(changeAmountVM.Count);
-                ObservableCollection<InvoiceDetailDTO> dTOs = new ObservableCollection<InvoiceDetailDTO>();
-                foreach (var item in mainWindowVM.DataGridProducts)
+                try
                 {
-                    dTOs.Add(item);
+                    mainWindowVM.InvoiceDetail.Count = Convert.ToDouble(changeAmountVM.Count);
+                    ObservableCollection<InvoiceDetailDTO> dTOs = new ObservableCollection<InvoiceDetailDTO>();
+                    foreach (var item in mainWindowVM.DataGridProducts)
+                    {
+                        dTOs.Add(item);
+                    }
+                    mainWindowVM.DataGridProducts.Clear();
+                    mainWindowVM.DataGridProducts = dTOs;
+                    mainWindowVM.TotalSum = await Task.Run<string>(async () =>
+                    {
+                        double d = await Calculate.TotalSum(InvoiceDetailDTO.ToEntities(mainWindowVM.DataGridProducts)
+                             .GetAwaiter().GetResult());
+                        return d.ToString();
+                    });
+                    changeAmountVM.CurrentWindow.Close();
                 }
-                mainWindowVM.DataGridProducts.Clear();
-                mainWindowVM.DataGridProducts = dTOs;
-                mainWindowVM.TotalSum = Task.Run<string>(async () =>
+                catch (FormatException ex)
                 {
-                    double d = await Calculate.TotalSum(InvoiceDetailDTO.ToEntities(mainWindowVM.DataGridProducts)
-                         .GetAwaiter().GetResult());
-                    return d.ToString();
-                }).GetAwaiter().GetResult();
+                    MessageBox.Show("Zəhmət olmasa yazdığınız miqdarı yoxlayın","Yazılış səhvi",MessageBoxButton.OK,MessageBoxImage.Error);
+                    changeAmountVM.Count = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Səhv baş verdi, zəhmət olmasa yenidən yoxlayın");
+                }
             }
-            changeAmountVM.CurrentWindow.Close();
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.csprojAssemblyReference.cache
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\MainWindow.baml
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\MainWindow.g.cs
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\App.g.cs
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report_MarkupCompile.cache
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.g.resources
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.İnvoiceDetails.resources
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.csproj.GenerateResource.cache
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.exe.licenses
+C:\Users\Murad\source\repos\Spark\Report\obj\Debug\Report.csproj.CoreCompileInputs.cache

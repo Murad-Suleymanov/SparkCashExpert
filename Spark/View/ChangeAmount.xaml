@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spark.View"
+        xmlns:local="clr-namespace:Spark"
         mc:Ignorable="d"
         Title="ChangeAmount" Height="500" Width="350" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -68,19 +68,19 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Text="{Binding Count}" Background="White" Grid.ColumnSpan="3" Margin="20,20,20,10" FontSize="20" TextAlignment="Center"/>
+        <TextBox local:FocusExtension.IsFocused="True" Text="{Binding Count}" Background="White" Grid.ColumnSpan="3" Margin="20,20,20,10" FontSize="20" TextAlignment="Center" Focusable="True"/>
        
-        <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource btnLeft}" Content="1"/>
-        <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource btnCenter}" Content="2"/>
-        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource btnRight}" Content="3"/>
-        <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource btnLeft}" Content="4"/>
-        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource btnCenter}" Content="5"/>
-        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource btnRight}" Content="6"/>
-        <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="7"/>
-        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="8"/>
-        <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="9"/>
-        <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource btnLeft}" Content="00"/>
-        <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
+        <Button Command="{Binding addOneCommand}" Grid.Row="1" Grid.Column="0" Style="{StaticResource btnLeft}" Content="1"/>
+        <Button Command="{Binding addTwoCommand}" Grid.Row="1" Grid.Column="1" Style="{StaticResource btnCenter}" Content="2"/>
+        <Button Command="{Binding addThreeCommand}" Grid.Row="1" Grid.Column="2" Style="{StaticResource btnRight}" Content="3"/>
+        <Button Command="{Binding addFourCommand}" Grid.Row="2" Grid.Column="0" Style="{StaticResource btnLeft}" Content="4"/>
+        <Button Command="{Binding addFiveCommand}" Grid.Row="2" Grid.Column="1" Style="{StaticResource btnCenter}" Content="5"/>
+        <Button Command="{Binding addSixCommand}" Grid.Row="2" Grid.Column="2" Style="{StaticResource btnRight}" Content="6"/>
+        <Button Command="{Binding addSevenCommand}" Grid.Row="3" Grid.Column="0" Style="{StaticResource btnLeft}" Content="7"/>
+        <Button Command="{Binding addEightCommand}" Grid.Row="3" Grid.Column="1" Style="{StaticResource btnCenter}" Content="8"/>
+        <Button Command="{Binding addNineCommand}" Grid.Row="3" Grid.Column="2" Style="{StaticResource btnRight}" Content="9"/>
+        <Button Command="{Binding addPointCommand}" Grid.Row="4" Grid.Column="0" Style="{StaticResource btnLeft}" Content="."/>
+        <Button Command="{Binding addZeroCommand}" Grid.Row="4" Grid.Column="1" Style="{StaticResource btnCenter}" Content="0"/>
         <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource btnCancel}" Command="{Binding cancelCommand}"/>
         <Button Command="{Binding countCommand}" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource btnChoose}" />
     </Grid>

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:Spark.View"
+        xmlns:local="clr-namespace:Spark"
         mc:Ignorable="d"
         Title="RequestAdmin" Height="300" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -51,7 +51,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Style="{StaticResource lblHeader}"/>
-        <TextBox Text="{Binding Username}"  Grid.Row="1" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="İstifadəçi adı"/>
+        <TextBox local:FocusExtension.IsFocused="True" Text="{Binding Username}"  Grid.Row="1" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="İstifadəçi adı"/>
         <PasswordBox x:Name="PasswordTxt" Grid.Row="2" Background="White" Margin="50,15,50,15" VerticalContentAlignment="center" FontSize="20" materialDesign:HintAssist.Hint="Şifrə">
             <PasswordBox.InputBindings>
                 <KeyBinding Command="{Binding SignIn}" CommandParameter="{Binding ElementName=PasswordTxt}" Key="Enter"/>

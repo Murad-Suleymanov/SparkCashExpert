@@ -69,7 +69,8 @@ namespace Spark.Model
                         ID = item.ID,
                         Count = item.Count,
                         IsCanceled = item.IsCanceled,
-                        CurrentPrice = item.CurrentPrice
+                        CurrentPrice = item.CurrentPrice,
+                        ProductName=item.Product.Name
                     });
                 }
                 return invoiceDetails;

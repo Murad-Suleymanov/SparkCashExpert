@@ -2,7 +2,9 @@
 using Spark.Dal.DataAccess;
 using Spark.Dal.Domain.Abstract;
 using Spark.Model;
+using System;
 using System.Collections.ObjectModel;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -17,6 +19,23 @@ namespace Spark.ViewModel.Windows
         }
         public FindProductCancelCommand cancelCommand => new FindProductCancelCommand(this);
         public ChooseProductCommand chooseProductCommand => new ChooseProductCommand(this);
+
+
+        #region  //0-9 number and helper buttons
+        public AddOneFPCommand addOneCommand => new AddOneFPCommand(this);
+        public AddTwoFPCommand addTwoCommand => new AddTwoFPCommand(this);
+        public AddThreeFPCommand addThreeCommand => new AddThreeFPCommand(this);
+        public AddFourFPCommand addFourCommand => new AddFourFPCommand(this);
+        public AddFiveFPCommand addFiveCommand => new AddFiveFPCommand(this);
+        public AddSixFPCommand addSixCommand => new AddSixFPCommand(this);
+        public AddSevenFPCommand addSevenCommand => new AddSevenFPCommand(this);
+        public AddEightFPCommand addEightCommand => new AddEightFPCommand(this);
+        public AddNineFPCommand addNineCommand => new AddNineFPCommand(this);
+        public AddZeroFPCommand addZeroCommand => new AddZeroFPCommand(this);
+        public AddDoubleZeroFPCommand addDoubleZeroCommand => new AddDoubleZeroFPCommand(this);
+        public DeleteNumberFPCommand deleteNumberCommand => new DeleteNumberFPCommand(this);
+        #endregion
+
         public MainWindowViewModel MainWindowVM { get; set; }
         public ProductDTO SelectedItem { get; set; }
 

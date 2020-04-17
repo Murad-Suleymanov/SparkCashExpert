@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Spark"
         mc:Ignorable="d"
         Title="FindProduct" Height="600" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" Cursor="Hand" ShowInTaskbar="False" Icon="/Spark;component/Images/search-plus.png" HorizontalAlignment="Right" ResizeMode="NoResize">
     <Window.Resources>
@@ -66,7 +67,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged}"  Grid.Row="0" Grid.ColumnSpan="7" Background="White" materialdesign:HintAssist.Hint="Məhsulun barkodu" Margin="20,20,20,10" VerticalContentAlignment="Center" FontSize="30"/>
+        <TextBox local:FocusExtension.IsFocused="True" Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Grid.Row="0" Grid.ColumnSpan="7" Background="White" materialdesign:HintAssist.Hint="Məhsulun barkodu" Margin="20,20,20,10" VerticalContentAlignment="Center" FontSize="30"/>
         <!--<DataGrid ItemsSource="{Binding Products}" Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4" SelectedItem="{Binding SelectedItem}"/>-->
         <ListView ItemsSource="{Binding Products}" Grid.Row="1" Grid.ColumnSpan="4" Margin="20,5,10,10" Grid.RowSpan="4" SelectedItem="{Binding SelectedItem}" Background="#FFF3E7E7" Foreground="#DD0A0909" >
             <ListView.View>
@@ -77,18 +78,18 @@
             </ListView.View>
         </ListView>
         <Button Grid.Row="5" Grid.ColumnSpan="4" Content="SEÇ" Style="{StaticResource btnChoose}" Command="{Binding chooseProductCommand}" Margin="19,10,21,30"/>
-        <Button Grid.Column="4" Grid.Row="1" Height="Auto" Content="1" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="5" Grid.Row="1" Height="Auto" Content="2" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="6" Grid.Row="1" Height="Auto" Content="3" Style="{StaticResource btnRight}"/>
-        <Button Grid.Column="4" Grid.Row="2" Height="Auto" Content="4" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="5" Grid.Row="2" Height="Auto" Content="5" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="6" Grid.Row="2" Height="Auto" Content="6"  Style="{StaticResource btnRight}"/>
-        <Button Grid.Column="4" Grid.Row="3" Height="Auto" Content="7" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="5" Grid.Row="3" Height="Auto" Content="8" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="6" Grid.Row="3" Height="Auto" Content="9"  Style="{StaticResource btnRight}"/>
-        <Button Grid.Column="4" Grid.Row="4" Height="Auto" Content="C" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="5" Grid.Row="4" Height="Auto" Content="0" Style="{StaticResource btnOthers}"/>
-        <Button Grid.Column="6" Grid.Row="4" Height="Auto" Content="Sil" Style="{StaticResource btnRight}"/>
+        <Button Command="{Binding addOneCommand}" Grid.Column="4" Grid.Row="1" Height="Auto" Content="1" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addTwoCommand}" Grid.Column="5" Grid.Row="1" Height="Auto" Content="2" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addThreeCommand}" Grid.Column="6" Grid.Row="1" Height="Auto" Content="3" Style="{StaticResource btnRight}"/>
+        <Button Command="{Binding addFourCommand}" Grid.Column="4" Grid.Row="2" Height="Auto" Content="4" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addFiveCommand}" Grid.Column="5" Grid.Row="2" Height="Auto" Content="5" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addSixCommand}" Grid.Column="6" Grid.Row="2" Height="Auto" Content="6"  Style="{StaticResource btnRight}"/>
+        <Button Command="{Binding addSevenCommand}" Grid.Column="4" Grid.Row="3" Height="Auto" Content="7" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addEightCommand}" Grid.Column="5" Grid.Row="3" Height="Auto" Content="8" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addNineCommand}" Grid.Column="6" Grid.Row="3" Height="Auto" Content="9"  Style="{StaticResource btnRight}"/>
+        <Button Command="{Binding addDoubleZeroCommand}" Grid.Column="4" Grid.Row="4" Height="Auto" Content="00" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding addZeroCommand}" Grid.Column="5" Grid.Row="4" Height="Auto" Content="0" Style="{StaticResource btnOthers}"/>
+        <Button Command="{Binding deleteNumberCommand}" Grid.Column="6" Grid.Row="4" Height="Auto" Content="Sil" Style="{StaticResource btnRight}"/>
         <Button Command="{Binding cancelCommand}" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="5"  Content="X" Style="{StaticResource btnCancel}" />
 
         <TextBlock Text="Bu barkodla başlayan məhsul yoxdur" Grid.Row="5" Grid.ColumnSpan="3" VerticalAlignment="Bottom"   FontFamily="Times New Roman" FontSize="15"  Background="White"

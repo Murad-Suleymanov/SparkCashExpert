@@ -13,7 +13,8 @@ namespace Spark.Commands
 
         public override void Execute(object parameter)
         {
-            FindProduct findProduct = new FindProduct(new FindProductViewModel { MainWindowVM = mainWindowVM });
+            Spark.View.FindProduct findProduct = new Spark.View.FindProduct
+                (new FindProductViewModel { MainWindowVM = mainWindowVM });
             findProduct.Show();
         }
     }

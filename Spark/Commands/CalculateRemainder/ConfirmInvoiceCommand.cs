@@ -1,7 +1,10 @@
-﻿using Spark.Dal.DataAccess;
+﻿
+using Spark.BusinessLogich.Report;
+using Spark.Dal.DataAccess;
 using Spark.Dal.Domain.Abstract;
 using Spark.Dal.Domain.Entities;
 using Spark.Model;
+using Spark.Report;
 using Spark.ViewModel.Windows;
 using System;
 using System.Windows;
@@ -39,6 +42,8 @@ namespace Spark.Commands.CalculateRemainder
 
                 if (IsSent)
                     MessageBox.Show("Ugurlu");
+                Sender.InvoiceDetails(await InvoiceDetailDTO.ToEntities(mainWindowVM.DataGridProducts),mainWindowVM.CashierName);
+                InvoiceDetail.PrintReport();
             }
         }
     }

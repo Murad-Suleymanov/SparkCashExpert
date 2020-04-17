@@ -9,5 +9,8 @@ namespace Spark.BusinessLogich.Domain.Entities
         public double CurrentPrice { get; set; }
         public double TotalSum => Count * CurrentPrice;
         public bool IsCanceled { get; set; }
+
+        public string UserName { get; set; }
+        public string ProductName { get; set; }
     }
 }
