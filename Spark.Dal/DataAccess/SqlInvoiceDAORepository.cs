@@ -27,7 +27,7 @@ namespace Spark.Dal.DataAccess
                 User = await new SqlUserDAORepository(new SqlContext()).GetByID(Convert.ToInt32(rdr["UserID"]))
             };
         }
-
+        //
         public async Task<InvoiceDAO> GetByID(int id)
         {
             using (SqlConnection con = new SqlConnection(db.ConnectionString))
